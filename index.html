@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登霖食品行 - 價目表與宅配資訊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #fffaf0;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f59e0b 0%, #fef3c7 100%);
+        }
+        .card-hover:active {
+            transform: scale(0.98);
+            transition: transform 0.1s;
+        }
+        /* Tab transitions */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-item.active {
+            color: #ea580c;
+            border-bottom-color: #ea580c;
+        }
+    </style>
+</head>
+<body class="pb-28">
+
+    <!-- Header / Banner -->
+    <header class="gradient-bg text-orange-900 py-10 px-6 text-center shadow-sm">
+        <div class="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-md">
+            <i class="fas fa-store text-3xl text-orange-600"></i>
+        </div>
+        <h1 class="text-2xl font-bold tracking-wider">登霖食品行</h1>
+        <p class="text-sm mt-2 opacity-80 font-medium">傳承美味．堅持鮮度</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="sticky top-0 bg-white shadow-sm border-b border-orange-100 z-10">
+        <div class="flex justify-around items-center">
+            <button onclick="switchTab('prices')" id="btn-prices" class="nav-item active flex-1 py-4 text-orange-800 font-bold border-b-2 border-transparent transition-all">
+                產品價目
+            </button>
+            <button onclick="switchTab('notes')" id="btn-notes" class="nav-item flex-1 py-4 text-orange-800 font-bold border-b-2 border-transparent transition-all">
+                注意事項
+            </button>
+            <button onclick="switchTab('shipping')" id="btn-shipping" class="nav-item flex-1 py-4 text-orange-800 font-bold border-b-2 border-transparent transition-all">
+                宅配須知
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-md mx-auto px-4 mt-6">
+
+        <!-- Page 1: Price List -->
+        <section id="prices" class="tab-content active space-y-4">
+            <div class="flex items-center space-x-2 mb-4">
+                <div class="w-1.5 h-6 bg-orange-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-orange-900 tracking-widest">精選荖類</h2>
+            </div>
+
+            <!-- Product Card: Pure Peanut -->
+            <div class="bg-white rounded-2xl shadow-sm border border-orange-50 overflow-hidden card-hover">
+                <div class="p-4 bg-orange-50 border-b border-orange-100 flex justify-between items-center">
+                    <span class="font-bold text-orange-800 text-lg">純花生荖</span>
+                    <span class="bg-orange-200 text-orange-800 text-xs px-2 py-1 rounded-md font-bold">人氣首選</span>
+                </div>
+                <div class="p-4 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">大包 (600公克)</span>
+                        <span class="text-orange-700 font-bold text-lg">$240</span>
+                    </div>
+                    <div class="border-t border-dashed border-stone-100 pt-4 flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">小包 (300公克)</span>
+                        <span class="text-orange-700 font-bold text-lg">$120</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card: Sesame Lao -->
+            <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden card-hover">
+                <div class="p-4 bg-stone-50 border-b border-stone-100 flex justify-between items-center">
+                    <span class="font-bold text-stone-800 text-lg">麻荖</span>
+                </div>
+                <div class="p-4 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">大包 (600公克)</span>
+                        <span class="text-stone-800 font-bold text-lg">$200</span>
+                    </div>
+                    <div class="border-t border-dashed border-stone-100 pt-4 flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">小包 (300公克)</span>
+                        <span class="text-stone-800 font-bold text-lg">$100</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card: Rice Lao -->
+            <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden card-hover">
+                <div class="p-4 bg-stone-50 border-b border-stone-100 flex justify-between items-center">
+                    <span class="font-bold text-stone-800 text-lg">米荖</span>
+                </div>
+                <div class="p-4 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">大包 (600公克)</span>
+                        <span class="text-stone-800 font-bold text-lg">$200</span>
+                    </div>
+                    <div class="border-t border-dashed border-stone-100 pt-4 flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">小包 (300公克)</span>
+                        <span class="text-stone-800 font-bold text-lg">$100</span>
+                    }
+                }
+            }
+
+            <!-- Product Card: Coconut Lao -->
+            <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden card-hover">
+                <div class="p-4 bg-stone-50 border-b border-stone-100 flex justify-between items-center">
+                    <span class="font-bold text-stone-800 text-lg">椰子荖</span>
+                </div>
+                <div class="p-4 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">大包 (600公克)</span>
+                        <span class="text-stone-800 font-bold text-lg">$200</span>
+                    </div>
+                    <div class="border-t border-dashed border-stone-100 pt-4 flex justify-between items-center">
+                        <span class="text-stone-600 font-medium">小包 (300公克)</span>
+                        <span class="text-stone-800 font-bold text-lg">$100</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 2: Precautions (Formerly Editor's Notes) -->
+        <section id="notes" class="tab-content">
+            <div class="bg-orange-900 text-white rounded-3xl p-6 shadow-lg relative overflow-hidden mb-6">
+                <i class="fas fa-exclamation-circle absolute top-4 right-4 text-orange-800 text-6xl opacity-20"></i>
+                <div class="flex items-center space-x-2 mb-6 relative">
+                    <i class="fas fa-clipboard-list text-orange-300 text-xl"></i>
+                    <h2 class="text-xl font-bold tracking-widest">注意事項</h2>
+                </div>
+                <div class="space-y-6 text-base leading-relaxed text-orange-100 relative">
+                    <div class="bg-orange-800/40 p-5 rounded-2xl border border-orange-700/50">
+                        <p class="font-bold mb-2 text-orange-300 flex items-center">
+                            <i class="fas fa-leaf mr-2"></i> 本店產品均為全素
+                        </p>
+                        <p>本店荖類產品皆不含蛋奶，保鮮期為兩個月。為了呈現最完美的酥脆口感，建議開封後盡快食用完畢喔！</p>
+                    </div>
+                    <div class="bg-orange-800/40 p-5 rounded-2xl border border-orange-700/50">
+                        <p class="font-bold mb-2 text-orange-300 flex items-center">
+                            <i class="fas fa-temperature-low mr-2"></i> 溫馨提醒
+                        </p>
+                        <p>由於產品含有天然麥芽，天氣冷熱會影響軟硬度。天氣冷時麻荖口感變硬是自然現象，請大家安心品嚐。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: Shipping -->
+        <section id="shipping" class="tab-content space-y-4">
+            <div class="flex items-center space-x-2 mb-4">
+                <div class="w-1.5 h-6 bg-stone-800 rounded-full"></div>
+                <h2 class="text-xl font-bold text-stone-900 tracking-widest">宅配詳情</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-stone-100 p-6 space-y-6">
+                <!-- Packing Info -->
+                <div class="flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-stone-800">裝箱包數限制</p>
+                        <p class="text-sm text-stone-500 mt-1">
+                            大包 (600g) 一箱最多裝 14 包<br>
+                            小包 (300g) 一箱最多裝 24 包
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Shipping Fee -->
+                <div class="flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-green-600 shrink-0">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-bold text-stone-800">運費計算</p>
+                        <div class="grid grid-cols-2 gap-3 mt-2">
+                            <div class="bg-stone-50 p-3 rounded-xl border border-stone-100">
+                                <p class="text-xs text-stone-400">一般地區</p>
+                                <p class="font-bold text-stone-700">$250</p>
+                            </div>
+                            <div class="bg-stone-50 p-3 rounded-xl border border-stone-100">
+                                <p class="text-xs text-stone-400">離島地區</p>
+                                <p class="font-bold text-stone-700">$360</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- COD Fee -->
+                <div class="flex items-start space-x-4">
+                    <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 shrink-0">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-stone-800">黑貓貨到付款</p>
+                        <p class="text-sm text-stone-500 mt-1">每箱需額外加收手續費 35 元</p>
+                    </div>
+                </div>
+
+                <!-- Holiday Deadline -->
+                <div class="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
+                    <p class="text-red-700 font-bold text-sm mb-1"><i class="fas fa-exclamation-triangle mr-1"></i> 年節宅配最後寄件日</p>
+                    <p class="text-red-600 font-black text-2xl uppercase">2 月 2 日</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-stone-400 text-xs py-10">
+            <p>© 登霖食品行 版權所有</p>
+        </footer>
+
+    </main>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-xs px-4">
+        <button onclick="window.open('https://line.me')" class="w-full bg-[#06C755] text-white py-4 rounded-full font-bold shadow-xl flex items-center justify-center space-x-2 active:scale-95 transition-transform">
+            <i class="fab fa-line text-2xl"></i>
+            <span>立即私訊小編訂購</span>
+        </button>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Remove active style from all buttons
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected content
+            document.getElementById(tabId).classList.add('active');
+            // Add active style to selected button
+            document.getElementById('btn-' + tabId).classList.add('active');
+
+            // Scroll to top of the tabs
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
